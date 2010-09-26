@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  company: MyString
+  latitude: 9.99
+  longitude: 9.99
+  title: MyString
+  description: MyText
+
+two:
+  company: MyString
+  latitude: 9.99
+  longitude: 9.99
+  title: MyString
+  description: MyText
