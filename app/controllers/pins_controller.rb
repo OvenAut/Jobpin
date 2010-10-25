@@ -1,5 +1,7 @@
 class PinsController < ApplicationController
   # GET /pins/map
+  
+  
   def show_on_map
     @pin = Pin.find(params[:id])
     respond_to do |format|
