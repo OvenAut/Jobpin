@@ -51,6 +51,7 @@ class PinsController < ApplicationController
         render :partial => "new", :locals=>{:pin=>@pin}
       }
       format.xml  { render :xml => @pin }
+      #format.js
     end
   end
 
@@ -69,9 +70,11 @@ class PinsController < ApplicationController
         format.html { redirect_to(@pin,:notice => 'Pin was successfully created.')}
         #redirect_to(@pin,:notice => 'Pin was successfully created.')
         format.xml  { render :xml => @pin, :status => :created, :location => @pin }
+        format.js
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @pin.errors, :status => :unprocessable_entity }
+        
       end
     end
   end
@@ -88,6 +91,7 @@ class PinsController < ApplicationController
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @pin.errors, :status => :unprocessable_entity }
+        
       end
     end
   end

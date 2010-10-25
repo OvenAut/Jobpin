@@ -7,4 +7,6 @@ tmp/*
 doc/api 
 doc/app 
 *.swp
-*~ .DS_Store
+*~ 
+.DS_Store
+webrat.log
