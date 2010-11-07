@@ -1,5 +1,6 @@
 Jobpins::Application.routes.draw do
   resources :pins
+  resources :lists
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

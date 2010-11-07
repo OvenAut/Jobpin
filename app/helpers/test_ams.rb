@@ -1,8 +1,8 @@
 
-require "rubygems"
-require "nokogiri"
-require "open-uri"
-require "mechanize"
+
+#require "nokogiri"
+#require "open-uri"
+#require "mechanize"
 
 agent = Mechanize.new { |agent|
     agent.user_agent_alias = 'Mac Safari'
@@ -17,11 +17,11 @@ agent.page.links_with(:href => /index=/)[0].click
 pagesmax = agent.page.search("span:nth-child(2)").first
 puts pagesmax.text.to_i
 
-0.times do
+10.times do
 
 foo = 0
 agent.page.search(".fld:nth-child(2)").each do |t|
-puts t.text if foo <= 6
+puts t.text unless t.text =~ {"", "---"}
 foo += 1
 #puts foo
 end

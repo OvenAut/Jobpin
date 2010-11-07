@@ -1,29 +1,4 @@
 <h1>Jobpins</h1>
-<!-->
-<table>
-  <tr>
-    <th>Company</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @pins.each do |pin| %>
-  <tr>
-    <td><%= pin.company %></td>
-    <td><%= pin.latitude %></td>
-    <td><%= pin.longitude %></td>
-    <td><%= pin.title %></td>
-    <td><%= pin.description %></td>
-    <td><%= link_to 'Show', pin %></td>
-    <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-    <td><%= link_to 'Destroy', pin, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>-->
-<%= render :partial => "map", :locals=>{:data=>"/pins.xml", :full_page=>true, :show_action=>'show', :new_action=>'new'}%>
+<%= render :partial => "map", :locals=>{:data=>"/pins.js", :full_page=>true, :show_action=>'show', :new_action=>'new'}%>
 

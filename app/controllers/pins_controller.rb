@@ -3,29 +3,32 @@ class PinsController < ApplicationController
   
   
   def show_on_map
-    @pin = Pin.find(params[:id])
-    respond_to do |format|
-      format.html do
+    #@pin = Pin.find(params[:id])
+    #respond_to do |format|
+      #format.html do
         
-      end
-      format.xml {
+      #end
+      #format.xml {
         render :text=>@pin.to_xml(
         :only =>[:latitude, :longitude, :title, :description],
         :root =>"data")
-          }
-    end
+          #}
+    #end
     
   end
 
   # GET /pins
   # GET /pins.xml
   def index
-    @pins = Pin.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :text => @pins.to_xml(:root=>"data")}
-    end
+    #pins = Pin.all
+    #j = ActiveSupport::JSON
+    #lists = j.encode(pins)
+    
+    #respond_with(lists)
+    #respond_with do |format|
+      #format.html   
+      #format.js {render :json => @pins}
+    #end
   end
 
   # GET /pins/1
