@@ -1,4 +1,2 @@
-<h1>Jobpins</h1>
-
-<%= render :partial => "map", :locals=>{:data=>"/pins.js", :full_page=>true, :show_action=>'show', :new_action=>'new'}%>
-
+<%= render :partial => "layouts/head" %>
+<%= render :partial => "layouts/map", :locals=>{:data=>"/lists", :full_page=>true, :show_action=>'show', :new_action=>'new'}%>

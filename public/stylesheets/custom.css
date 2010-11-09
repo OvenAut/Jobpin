@@ -1,0 +1,171 @@
+#map {
+	border: 1px solid #979797;
+	min-width: 200px;
+	min-height: 400px;
+	height: 400px;
+	padding: 0px;
+	margin:0;
+	float: none;
+	white-space:nowrap;
+	position:static;
+}
+	
+img.down_arrow {
+	padding: 0px 0px 0px 25px;
+/*--	
+	position: static; 
+ 
+
+	display: block;
+	--*/
+}
+
+#dropdown {
+	font-size: small;
+	font-family: arial, helvetica, sans-serif;
+	width:100%;
+	float:left;
+	margin:0;
+	position:static;
+	/*--
+	margin-top: 1em;
+	
+	--*/	
+}
+
+#dropdown a {
+	padding: 0px 5px;
+	text-align:left;
+	
+	/*--
+	text-align: center;
+	display:block;
+	border: 1px solid #555;
+	white-space:nowrap;
+	margin:0;
+	padding: 0.3em;
+	--*/
+	font-size:12px;
+	font-weight:bold;
+	color:black;
+	
+}
+
+li.lihead { border:1px solid;
+		border-color: rgb(112, 112, 112) rgb(200, 200, 200) rgb(200, 200, 200) rgb(112, 112, 112);
+			}
+
+#dropdown ul {
+	list-style:none;
+		margin:0;
+		padding: 0px;
+		float:left;
+		width:68px;	/* width of all menu boxes */
+		/* NOTE: For adjustable menu boxes you can comment out the above width rule.
+		However, you will have to add padding in the "#menh a" rule so that the menu boxes
+		will have space on either side of the text -- try it 
+		
+		*/
+		border:1px solid black;
+
+		left: 1px;
+		position:static;
+		z-index:999;
+		
+}
+
+
+#dropdown li {
+	list-style:none;
+	position:static;
+	min-height: 1px;		/* Sophie Dennis contribution for IE7 */
+	float:left;
+	width: 68px;
+	padding: 0px;
+
+	/*--
+	border:1px solid green;
+
+	vertical-align: bottom;		/* Sophie Dennis contribution for IE7 
+	display: block;
+	
+	float:left;
+	list-style: none;
+	/*--
+	padding: 1px 3px;
+	
+	font: 12px Tahoma, Arial;
+	border: 2px solid green;
+	border-style:groove;	
+	--*/
+}
+/*--
+#dropdown ul ul {
+	position:absolute;
+	z-index:500;
+	top:auto;
+	display:none;
+	padding: 1em;
+	margin:-1em 0 0 -1em;
+}
+--*/
+
+#dropdown li a {
+	text-decoration: none;
+	/*--	
+	padding: 0px 5px;
+	text-align:left;
+
+	display: block;
+	background: white;
+	/*-- border: 1px solid black; 
+	padding: 3px 5px;					
+	width: 50px;
+	color: black;
+	white-space: nowrap;
+	font-weight:bold;
+	margin:0; --*/
+}
+
+#dropdown li a:hover {
+	
+}
+
+#dropdown li ul {
+	position: absolute;
+	float:left;
+	/*--
+	margin: 0;
+	float: left;
+	width: auto;
+	/*--visibility: hidden; 
+	border-top: 1px solid white; 
+	float:none;
+		padding: 3px 5px;
+	z-index:999;
+	border: 1px solid red;--*/
+
+}
+
+#dropdown li ul li {
+	
+	
+
+	float: none;
+	
+}
+
+#dropdown li ul li a {
+	display:block;
+	background: white;
+	
+	/*-- width: auto;
+	
+	padding: 3px 1px;
+	
+	margin:0; --*/
+}
+
+#dropdown li ul li a:hover {
+	background: #F5EAA6;
+}

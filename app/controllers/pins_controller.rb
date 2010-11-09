@@ -29,6 +29,7 @@ class PinsController < ApplicationController
       #format.html   
       #format.js {render :json => @pins}
     #end
+    
   end
 
   # GET /pins/1

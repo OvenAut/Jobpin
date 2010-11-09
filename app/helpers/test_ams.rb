@@ -1,8 +1,8 @@
 
-
-#require "nokogiri"
-#require "open-uri"
-#require "mechanize"
+require "rubygems"
+require "nokogiri"
+require "open-uri"
+require "mechanize"
 
 agent = Mechanize.new { |agent|
     agent.user_agent_alias = 'Mac Safari'
@@ -21,7 +21,7 @@ puts pagesmax.text.to_i
 
 foo = 0
 agent.page.search(".fld:nth-child(2)").each do |t|
-puts t.text unless t.text =~ {"", "---"}
+puts t.text #unless t.text.to_s.blank?
 foo += 1
 #puts foo
 end
