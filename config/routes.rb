@@ -1,4 +1,6 @@
 Jobpins::Application.routes.draw do
+  devise_for :users
+
   resources :pins
   resources :lists
 

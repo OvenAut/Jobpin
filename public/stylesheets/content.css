@@ -27,7 +27,7 @@
 }
 
 h2 {
-	background:url("images/shiny_buttons/background.png") repeat-x scroll right center #C0C0C0;
+	background:url("yaml/navigation/images/shiny_buttons/background.png") repeat-x scroll right center #C0C0C0;
 	display:block;
 }
 
@@ -38,4 +38,16 @@ h2 {
 
 #topnav a:hover {
 	color:red;
+}
+
+#railsmsg {
+	line-height:30px;
+	margin-left:20px;
+	width:600px;
+	float:left;
+}
+
+#railsmsg p{
+	text-align:center;
+	
 }

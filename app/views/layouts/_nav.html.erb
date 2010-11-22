@@ -7,6 +7,12 @@
 		<%= text_field_tag 'tmp','i look for...', :class=>"searchlist" %>
 		<%= text_field_tag 'tmp','Were I look for...',:class=>"searchlist" %>
 		</div>
+		<div id="railsmsg">
+			<p class="notice"><%= notice %></p>
+		  <p class="alert"><%= alert %></p>
+			
+		</div>
+		
    <!-- <ul>
       <li class="active"><strong>Button 1</strong></li>
       <li><a href="#">Button 2</a></li>
@@ -20,8 +26,14 @@
 		    <a class="skip" title="skip link" href="#navigation">Skip to the navigation</a><span class="hideme">.</span>
 		    <a class="skip" title="skip link" href="#content">Skip to the content</a><span class="hideme">.</span>
 		    <!-- end: skip link navigation -->
-
-		<a href="#">Login</a> | <a href="#">Contact</a> | <a href="#">Imprint</a>
+<% if user_signed_in?  %>
+	Signed in as <%= current_user.email %>. Not You ?
+	<%= link_to "Sign out", destroy_user_session_path %>
+<% else  %>
+	<%= link_to "Sign up",new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+	
+<% end  %>
+		 | <a href="#">Contact</a> | <a href="#">Imprint</a>
 
 		  </div>
 		

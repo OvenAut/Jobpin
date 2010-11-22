@@ -39,9 +39,9 @@
   #header { position:relative; padding: 10px 32px 0px 20px; color: #000; background: #EDEAE1; height:60px; }
   #topnav { position:relative; right:10px; text-align:right; color: #aaa; background: transparent; margin:0px 0px; 
 	height:28px;
-	line-height:28px;
+	line-height:30px;
 	font-size:20px;
-	width:200px;
+		width:600px;
 	z-index:10;
 	float:right;
 	}
