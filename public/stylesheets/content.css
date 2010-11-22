@@ -1,0 +1,41 @@
+#map {
+	border: 0px solid #979797;
+	min-height: 400px;
+	height: 400px;
+	padding:0;
+	margin:0;
+	float: none;
+	white-space:nowrap;
+	position:relative;
+	width:100%;
+}
+
+
+.searchlist {
+	padding:2px 5px;
+	margin-left: 20px;
+  	height:20px;
+	float:left;
+	font-size:18px;
+	z-index:999;
+}
+
+
+.hideme a {
+	color:black;
+	
+}
+
+h2 {
+	background:url("images/shiny_buttons/background.png") repeat-x scroll right center #C0C0C0;
+	display:block;
+}
+
+#topnav a {
+	text-decoration:none;
+	color:black;
+}
+
+#topnav a:hover {
+	color:red;
+}

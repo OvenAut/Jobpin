@@ -1,6 +1,6 @@
 class PinsController < ApplicationController
   # GET /pins/map
-  
+
   
   def show_on_map
     #@pin = Pin.find(params[:id])
@@ -20,7 +20,7 @@ class PinsController < ApplicationController
   # GET /pins
   # GET /pins.xml
   def index
-    #pins = Pin.all
+    @pins = Pin.all
     #j = ActiveSupport::JSON
     #lists = j.encode(pins)
     

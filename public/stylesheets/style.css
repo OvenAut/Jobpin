@@ -1,0 +1,280 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+h1, h2, h3, h4 {
+	font-family:"Rockwell","Georgia","Palatino Linotype","Palatino","Times New Roman","Times,serif";
+}
+
+
+body {
+	background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/bodybg.jpg") no-repeat fixed center top #000000; 
+	color: #FFFFFF;
+	font-family: "Helvetica Neue",Helvetica,Arial,Geneva,sans-serif !important;
+	}
+	
+#wrapper {
+	margin: 0 auto;
+	position: relative;
+	width: 960px;
+	min-height: 100%;
+}
+
+/*--
+#wrapper, #head {
+	width: 950px;
+}
+--*/
+#header {
+	float: none;
+	width:960px;
+/*	background-color:green; */
+	height:182px;
+}
+
+#header h1 {
+	float:left;
+}
+#header h1 a{
+	display:block;
+	background: url("http://jobpins.oszko.net/images/example.gif") no-repeat; /*--font-size: 1em; height:182px; width:267px; --*/
+	height:182px; 
+	width:267px;
+	margin:0 auto;
+}
+
+#header span{
+	display:none;
+
+}
+
+#header p {
+	color: #DDDDDD;
+	font-size:50px;
+
+	padding:50px 0px 0px 500px;
+	height:182px;
+}
+
+#nav {
+	/*display:block;
+	background-color:red;
+	float:none; */
+	background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/blacktrans.png") repeat scroll 0 0 transparent;
+	width:960px;
+	height:50px;
+}
+
+#nav li {
+	float:left;
+	list-style:none;
+	background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/blacktrans.png") repeat scroll 0 0 transparent;
+	margin: 3px;
+	width: 100px;
+	text-align:center;
+}
+
+#nav li a{
+	text-decoration:none;
+	color: #ffffff;
+	display:block;
+	/* background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/blacktrans.png") repeat scroll 0 0 transparent; */
+	
+	font-size: 20px;
+	padding:10px;
+}
+
+#nav li a:hover{
+	background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/blacktrans.png") repeat scroll 0 0 transparent;
+	color:#AFDAFF;
+	display:block;
+	
+}
+
+body.home #btnHome a{
+		color:#A8EF9D;
+}
+body.about #btnAbout a{
+		color:#A8EF9D;
+}
+
+
+
+#container {
+	/* background-color:blue; */
+	/*clear:both;*/
+	margin: 10px 0 0 0;
+	padding:10px 5px 0 5px;
+	width:950px;
+	float:left;
+}
+#content {
+	float:left;
+	/*padding: 30px 0 25px; */
+	width:740px;
+	
+}
+
+#content abbr {
+	color:#AFDAFF;
+	text-decoration:none;
+	border-bottom: 1px dashed #AFDAFF;
+}
+
+#content a {
+	color:#A8EF9D;
+	text-decoration:none;
+	border-bottom: 1px dashed #A8EF9D;
+}
+
+
+#content a:hover {
+	background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/blacktrans.png") repeat scroll 0 0 transparent
+}
+#content h1 {
+	background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/blacktrans.png") repeat scroll 0 0 transparent;
+	padding :10px;
+	color:#AFDAFF;
+}
+
+#content h2 {
+	background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/blacktrans.png") repeat scroll 0 0 transparent;
+	padding :10px;
+	color:#AFDAFF;
+}
+
+h4 {
+	background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/whitetrans.png") repeat scroll 0 0 transparent;
+	padding :0px;
+	color:#AFDAFF;
+	display:block;
+	width:100%;
+	float:left;
+	text-align:center;
+	
+}
+
+
+#content p {
+	padding: 10px;
+	color:#FFFFFF;
+	font-size: 15px;
+	line-height:20px;
+	text-align:left;
+}
+
+#content dl {
+	padding: 0 0 0 25px;
+	color:#FFFFFF;
+	font-size: 15px;
+}
+
+#content dd {
+	margin: 0 20px;
+	display:block;
+}
+
+
+#content strong {
+	font-weight:bold;
+	color:#EAE96E;
+}
+
+
+#content blockquote {
+	background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/whitetrans.png") repeat scroll 0 0 transparent;
+	border:1px solid #A8EF9D;
+	padding :20px;
+	margin : 20px;
+	}
+
+
+#sidebar {
+	float:right;
+	padding: 10px 0px 25px 0px;
+	width: 180px;
+	background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/blacktrans.png") repeat scroll 0 0 transparent;
+	
+	margin-bottom: 10px;
+	overflow:auto;
+	padding-bottom: 35px; /* must be same height as the footer */
+	
+}
+
+.flickr div{
+	float:left;
+	padding: 5px 5px 5px 8px;
+	
+}
+
+
+#sidebar h4 {
+	margin: 10px auto 10px;
+}
+#sidebar ul{
+	text-align:left;
+	margin:5px 0 0 0;
+	list-style:none;
+	width:100%;
+	float:left;
+}
+
+#sidebar li{
+	/*text-decoration:none;
+	list-style:none; */
+	
+}
+
+#sidebar .links a {
+	color:#A8EF9D;
+	text-decoration:none;
+	border-bottom: 1px dashed #A8EF9D;
+	display:block;
+	padding:5px;
+}
+
+
+#sidebar img {
+	border:none;
+	border-bottom: 0px;
+}
+
+#sidebar a:hover {
+	background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/whitetrans.png") repeat scroll 0 0 transparent
+}
+
+
+#main {
+	overflow:auto;
+	padding-bottom: 35px; /* must be same height as the footer */
+	margin-bottom:10px;
+	}  
+
+#footer {
+	/*
+	position: relative;
+	margin-top: -150px; /* negative value of footer height */
+	position:absolute;
+	bottom: 0;
+	left: 0;
+	height: 35px;
+	background: url("http://s2.wp.com/wp-content/themes/pub/motion/images/whitetrans.png") repeat scroll 0 0 transparent;
+	width:960px;
+	text-align:center;
+	font-size: 11px;
+	
+	/* border:1px solid #A8EF9D; */
+}
+#footer p{
+	padding:10px;
+}
+
+#footer a {
+	color:#A8EF9D;
+	text-decoration:none;
+	border-bottom: 1px dashed #A8EF9D;
+	
+} 
+
+

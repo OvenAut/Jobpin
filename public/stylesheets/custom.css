@@ -1,17 +1,37 @@
+* {
+	padding:0;
+	margin:0;
+}
+
+
+
 #map {
-	border: 1px solid #979797;
-	min-width: 200px;
+	border: 0px solid #979797;
 	min-height: 400px;
 	height: 400px;
-	padding: 0px;
+	padding:0;
 	margin:0;
 	float: none;
 	white-space:nowrap;
-	position:static;
+	position:relative;
+	width:100%;
 }
-	
-img.down_arrow {
+
+#head {
+	background:blue;
+	width:12em;
+	padding-left:10px;
+}
+
+#head_menue {
+	background:red;
+	width:750px;
+}
+
+
+.down_arrow {
 	padding: 0px 0px 0px 25px;
+	border:0px;
 /*--	
 	position: static; 
  
@@ -23,10 +43,11 @@ img.down_arrow {
 #dropdown {
 	font-size: small;
 	font-family: arial, helvetica, sans-serif;
-	width:100%;
+	width:750px;
 	float:left;
 	margin:0;
-	position:static;
+	position:relative;
+	padding:0;
 	/*--
 	margin-top: 1em;
 	
@@ -36,7 +57,6 @@ img.down_arrow {
 #dropdown a {
 	padding: 0px 5px;
 	text-align:left;
-	
 	/*--
 	text-align: center;
 	display:block;
@@ -51,10 +71,6 @@ img.down_arrow {
 	
 }
 
-li.lihead { border:1px solid;
-		border-color: rgb(112, 112, 112) rgb(200, 200, 200) rgb(200, 200, 200) rgb(112, 112, 112);
-			}
-
 #dropdown ul {
 	list-style:none;
 		margin:0;
@@ -64,11 +80,9 @@ li.lihead { border:1px solid;
 		/* NOTE: For adjustable menu boxes you can comment out the above width rule.
 		However, you will have to add padding in the "#menh a" rule so that the menu boxes
 		will have space on either side of the text -- try it 
-		
 		*/
 		border:1px solid black;
-
-		left: 1px;
+	
 		position:static;
 		z-index:999;
 		
@@ -150,9 +164,9 @@ li.lihead { border:1px solid;
 #dropdown li ul li {
 	
 	
-
+/*
 	float: none;
-	
+*/	
 }
 
 #dropdown li ul li a {

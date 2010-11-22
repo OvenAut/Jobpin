@@ -1,0 +1,88 @@
+/**
+ * "Yet Another Multicolumn Layout" - (X)HTML/CSS framework
+ * (en) stylesheet for screen layout
+ * (de) Stylesheet für das Bildschirm-Layout
+ *
+ * @creator       YAML Builder V1.2.1 (http://builder.yaml.de)
+ * @file          basemod.css
+ * @-yaml-minver  3.3
+ */
+
+@media screen, projection
+{
+  /** 
+   * (en) Forcing vertical scrollbars in IE8, Firefox, Webkit & Opera 
+   * (de) Erzwingen vertikaler Scrollbalken in IE8, Firefox, Webkit & Opera 
+   *
+   * @workaround
+   * @affected IE8, FF, Webkit, Opera
+   * @css-for all
+   * @valid CSS3
+   */
+
+  body { overflow-y: scroll; }
+
+  /*-------------------------------------------------------------------------*/
+
+  /* (en) Marginal areas & page background */
+  /* (de) Randbereiche & Seitenhintergrund */
+  body { background: #EDEAE1 ; padding: 0px 0; }
+
+  html, body { height:100%;}
+
+  /* Layout Alignment | Layout-Ausrichtung */
+  .page_margins { margin: 0 auto; }
+
+  /* Layout Properties | Layout-Eigenschaften */
+  .page_margins { width: 100%;  min-width: 400px; max-width: 100%; background: #EDEAE1;}
+  .page { padding: 0px; }
+  #header { position:relative; padding: 10px 32px 0px 20px; color: #000; background: #EDEAE1; height:60px; }
+  #topnav { position:relative; right:10px; text-align:right; color: #aaa; background: transparent; margin:0px 0px; 
+	height:28px;
+	line-height:28px;
+	font-size:20px;
+	width:200px;
+	z-index:10;
+	float:right;
+	}
+  #nav { overflow:hidden; width: 100%; height:32px;}
+  #main { margin: 0px auto -128px; background: #EDEAE1;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	
+	 }
+  #teaser { clear:both; padding: 0 0px; margin: 0px 0; }
+  #footer_margins {
+	width:100%;
+	/* position:absolute;
+	bottom: 0;
+	left: 0; */
+	height: 28px;
+	clear:both;
+}
+
+  #footer { padding: 2px; color:#666; background: #f9f9f9; border-top: 5px #efefef solid; 
+	text-align:center;
+	}
+
+  /* (en) navigation: horizontal adjustment | (de) horizontale Ausrichtung  */
+  #nav ul { margin-left: 20px; }
+
+  /*-------------------------------------------------------------------------*/
+
+  /**
+   * (en) Formatting content container
+   * (de) Formatierung der Inhalts-Container
+   *
+   */
+
+  #col1 { float: left; width: 25%;  margin:0 }
+  #col2 { float: right; width: 25%;  margin:0 }
+  #col3 { width: auto; margin: 0 25% 0 25%}
+  #col1_content { padding: 0 10px 0 20px }
+  #col2_content { padding: 0 20px 0 10px }
+  #col3_content { padding: 0 10px }
+	
+  /*-------------------------------------------------------------------------*/
+}
