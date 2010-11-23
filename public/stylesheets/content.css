@@ -1,3 +1,12 @@
+body { background: #EDEAE1 ; font-size: 12px;
+	font-family:"Verdana","sans-serif";
+	}
+
+html, body { height:100%;}
+
+
+
+
 #map {
 	border: 0px solid #979797;
 	min-height: 400px;
@@ -20,20 +29,44 @@
 	z-index:999;
 }
 
+.button { 
+	
+	color:#050;
+	float:left; 
+  	margin:5px 10px;
+	font-size:12px;
+}
 
 .hideme a {
 	color:black;
 	
 }
 
+h2 h3 h4 {
+	border-bottom: 0 none;
+	font-family: Trebuchet MS,Georgia,"Times New Roman",serif;
+	color:#606060;
+	
+}
+
+
 h2 {
 	background:url("yaml/navigation/images/shiny_buttons/background.png") repeat-x scroll right center #C0C0C0;
 	display:block;
+	letter-spacing:-1px;
+	font-size:20px;
+}
+
+#topnav {
+	font-size:20px;
+	z-index:10;
+	/*width:720px; */
 }
 
 #topnav a {
 	text-decoration:none;
 	color:black;
+	
 }
 
 #topnav a:hover {
@@ -42,12 +75,46 @@ h2 {
 
 #railsmsg {
 	line-height:30px;
-	margin-left:20px;
-	width:600px;
+	
+	width:250px;
 	float:left;
 }
 
 #railsmsg p{
 	text-align:center;
 	
+}
+#indexlist {
+	float:left;
+	width:280px;
+	padding: 0px 0px 10px 0px;
+}
+
+#indexlist .key {
+	float:left;
+	width:80px;
+}
+
+#col2_content .debug{
+	font-size:10px;
+	
+}
+
+
+#todo_fixed {
+	text-decoration: line-through;
+	color:gray;
+}
+
+#todo_infix {
+	text-decoration:underline;
+	color:green;
+}
+
+#todo_secure {
+	color:red;
+}
+
+#todo_bug {
+	color:#005500;
 }

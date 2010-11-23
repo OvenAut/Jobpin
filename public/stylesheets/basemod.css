@@ -26,39 +26,43 @@
 
   /* (en) Marginal areas & page background */
   /* (de) Randbereiche & Seitenhintergrund */
-  body { background: #EDEAE1 ; padding: 0px 0; }
+  body { background: #EDEAE1 ; padding: 0px 0;
+	}
 
-  html, body { height:100%;}
 
   /* Layout Alignment | Layout-Ausrichtung */
-  .page_margins { margin: 0 auto; }
+  .page_margins { margin: 0 auto;
+	 			min-height:100%;
+	}
 
   /* Layout Properties | Layout-Eigenschaften */
   .page_margins { width: 100%;  min-width: 400px; max-width: 100%; background: #EDEAE1;}
-  .page { padding: 0px; }
+  .page { padding: 0px; 
+	overflow:auto;
+	padding-bottom: 28px
+	}
   #header { position:relative; padding: 10px 32px 0px 20px; color: #000; background: #EDEAE1; height:60px; }
-  #topnav { position:relative; right:10px; text-align:right; color: #aaa; background: transparent; margin:0px 0px; 
+  #topnav { position:relative; right:10px; text-align:right; color: #aaa; background: transparent; 
+	
+	margin:0px 0px; 
 	height:28px;
 	line-height:30px;
-	font-size:20px;
-		width:600px;
-	z-index:10;
 	float:right;
 	}
   #nav { overflow:hidden; width: 100%; height:32px;}
-  #main { margin: 0px auto -128px; background: #EDEAE1;
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
+  #main { margin: 0px auto 0; background: #EDEAE1;
 	
+	/* height: auto !important;
+	height: 100%; */
+	overflow:auto;
+	padding-bottom:28px;
 	 }
   #teaser { clear:both; padding: 0 0px; margin: 0px 0; }
   #footer_margins {
 	width:100%;
-	/* position:absolute;
-	bottom: 0;
-	left: 0; */
-	height: 28px;
+	position:relative;
+	height:28px;
+	margin-top: -28px;
 	clear:both;
 }
 
@@ -86,3 +90,9 @@
 	
   /*-------------------------------------------------------------------------*/
 }
+
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->

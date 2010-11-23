@@ -20,7 +20,8 @@ class PinsController < ApplicationController
   # GET /pins
   # GET /pins.xml
   def index
-    @pins = Pin.all
+    
+  @pins = Pin.search(params[:search_for])
     #j = ActiveSupport::JSON
     #lists = j.encode(pins)
     
@@ -36,9 +37,8 @@ class PinsController < ApplicationController
   # GET /pins/1.xml
   def show
     @pin = Pin.find(params[:id])
-
     respond_to do |format|
-      format.html { render :partial => "show", :locals=>{:pin=>@pin}}
+      format.html { }
       format.xml  { render :text=>@pin.to_xml(
       :only =>[:latitude, :longitude, :title, :description],
       :root =>"data") }
@@ -64,6 +64,7 @@ class PinsController < ApplicationController
   # GET /pins/1/edit
   def edit
     @pin = Pin.find(params[:id])
+    
   end
 
   # POST /pins

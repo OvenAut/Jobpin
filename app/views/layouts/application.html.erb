@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Jobpins v0.1b</title>
+  <title>Jobpins v01b</title>
   <%#= stylesheet_link_tag :all %>
 	<%= render 'layouts/stylesheets' %>
   <%= javascript_include_tag :defaults, "http://maps.google.com/maps/api/js?sensor=false" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+	<div class="page_margins">
+	  <!-- start: skip link navigation -->
+	  <!-- end: skip link navigation -->
+	  <!-- start: skip link navigation -->
+	  <!-- end: skip link navigation -->
+	  <div class="page">
+			<div id="header">
+
+
+				<h1>JOBPINS</h1>
+				<p> find your job near you !!!</p>
+
+			</div>
+
+	<%#= render :partial =>"layouts/header" %>
+	<%= render :partial =>"layouts/nav" %>
 	
-<%= yield %>
+	<div id="teaser">
+		<div id="map">
+		</div>
+	</div>
+	<%#= render :partial =>"layouts/teaser" %>	
+	<div id="main">
+	  <div id="col1">
+	    <div id="col1_content" class="clearfix">
+	      <!-- add your content here -->
+	<%= render :partial=>"layouts/col1" %>
+	    </div>
+	  </div>
+	  <div id="col2">
+	    <div id="col2_content" class="clearfix">
+	      <!-- add your content here -->
+
+	<%= render :partial=>"layouts/col2", :locals =>{ } %>
+
+	    </div>
+	  </div>
+	  <div id="col3">
+	    <div id="col3_content" class="clearfix">
+	      <!-- add your content here -->
+	<%= render :partial=>"layouts/col3", :locals =>{ :col3=>""} %>
+	<%= yield %>
+	    </div>
+	    <!-- IE Column Clearing -->
+	    <div id="ie_clearing"> &#160; </div>
+
+	  </div>
+	</div>
+	
+
+
+
+  </div>
+</div>
+<!-- begin: #footer -->
+<div id="footer_margins">
+  <div id="footer">Layout based on <a href="http://www.yaml.de/">YAML</a>
+		&nbsp;Version beta
+  </div>
+</div>
+
+<%#= render :partial =>"layouts/footer" %>	
+
 </body>
 </html>
