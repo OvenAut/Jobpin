@@ -8,6 +8,28 @@
 	</ul>
 	<div id="tab-content">
 		<div id="todo">
+			
+			<% getTodoList.each do |todo| %>
+			
+			<% id_todo = "todo_secure" if todo.defect  %>
+			<% id_todo = "todo_fixed" if todo.finished  %>
+			
+			<p id="<%= id_todo %>">
+			  <tr>
+			    <td><%= todo.name %></td>
+			    <td><%= link_to 'Show', todo %></td>
+					<% if user_signed_in?  %>
+			
+			    <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+			    <td><%= link_to 'Destroy', todo, :confirm => 'Are you sure?', :method => :delete %></td>
+			<% end  %>
+			  </tr>
+			</p>
+			<% end %>
+			
+			
+			<!--
+			
 			<p id="todo_fixed">Col2 tabs</p>
 			<p id="todo_infix">TODO list in DB</p>
 			<p id="todo_infix">implement CAN CAN</p>
@@ -25,6 +47,8 @@
 			<p id="todo">COL_1 belong to User</p>
 			<p id="todo">COL_3 belong to Pins</p>
 			<p id="todo">COL_2 belong to Stats</p>
+			
+			-->
 		</div>
 		<div id="debug">
 			<%= debug = debug(params) if Rails.env.development? %>

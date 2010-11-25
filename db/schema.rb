@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101122011855) do
+ActiveRecord::Schema.define(:version => 20101125214056) do
 
   create_table "pins", :force => true do |t|
     t.string   "company"
@@ -18,6 +18,25 @@ ActiveRecord::Schema.define(:version => 20101122011855) do
     t.decimal  "longitude"
     t.string   "title"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "todos", :force => true do |t|
+    t.string   "name"
+    t.boolean  "finished"
+    t.boolean  "defect"
+    t.text     "body"
+    t.date     "due"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "todotasks", :force => true do |t|
+    t.string   "name"
+    t.boolean  "fiished"
+    t.boolean  "defect"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

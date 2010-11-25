@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @todo.name %>
+</p>
+
+<p>
+  <b>Finished:</b>
+  <%= @todo.finished %>
+</p>
+
+<p>
+  <b>Defect:</b>
+  <%= @todo.defect %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @todo.body %>
+</p>
+
+<p>
+  <b>Due:</b>
+  <%= @todo.due %>
+</p>
+
+<% if user_signed_in?  %>
+
+<%= link_to 'Edit', edit_todo_path(@todo) %> |
+<% end  %>
+<%= link_to 'Back', todos_path %>
