@@ -1,4 +1,6 @@
 
+def do_ams
+
 require "rubygems"
 require "nokogiri"
 require "open-uri"
@@ -31,8 +33,25 @@ end
 #agent.page.search(".fld:nth-child(2)").each do |t|
 #   puts t.text
 # end
-
+end
 
 #puts page_test.forms
 
 #agent.page.links_with(:href => /index=/)[0].click
+
+class Place
+  #include Mongoid::Document
+  #field :name
+  #field :street
+
+  #field :lat, :type => Float
+  #field :lng, :type => Float
+
+  def do_geocode!
+    response = Net::HTTP.get_response(URI.parse("http://maps.googleapis.com/maps/api/geocode/json?address=#{Rack::Utils.escape(street)}&sensor=false"))
+    json = ActiveSupport::JSON.decode(response.body)
+    self.lat, self.lng = json["results"][0]["geometry"]["location"]["lat"], json["results"][0]["geometry"]["location"]["lng"]
+  rescue
+    false # For now, fail silently...
+  end
+end

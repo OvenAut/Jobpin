@@ -1,0 +1,17 @@
+#todo_fixed {
+	text-decoration: line-through;
+	color:gray;
+}
+
+#todo_infix {
+	text-decoration:underline;
+	color:green;
+}
+
+#todo_secure {
+	color:red;
+}
+
+#todo_bug {
+	color:#005500;
+}

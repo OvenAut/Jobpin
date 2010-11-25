@@ -1,33 +1,36 @@
+
 <h2>Stats</h2>
-<div id="col2sub">
-<h2>DEBUG col2</h2>
-<div class="debug">
-<%= debug = debug(params) if Rails.env.development? %>
+<div class="tab">
+	<ul id="tab-nav">
+		<li class="current"><a href="#todo">Todo</a></li>
+		<li ><a href="#debug">Debug</a></li>
+		<li ><a href="#stats">Stats</a></li>
+	</ul>
+	<div id="tab-content">
+		<div id="todo">
+			<p id="todo_fixed">Col2 tabs</p>
+			<p id="todo_infix">TODO list in DB</p>
+			<p id="todo_infix">implement CAN CAN</p>
+			<p id="todo_secure">implement Spinx search</p>
+			<p id="todo_fixed">fix "sticky" footer</p>
+			<p id="todo_fixed">fix nav css</p>
+			<p>suche nach vollzeit</p>
+			<p> halb zeit</p>
+			<p> Branche</p>
+			<p> oder Beruf</p>
+			<p> auf Deutsch (l18n)</p>
+			<p> Postleitzahl eingabe und radius in km</p>
+			<p id="todo_fixed">fix debug_col in ie</p>
+			<p id="todo_bug">Name cuted off if put in favorit</p>
+			<p id="todo">COL_1 belong to User</p>
+			<p id="todo">COL_3 belong to Pins</p>
+			<p id="todo">COL_2 belong to Stats</p>
+		</div>
+		<div id="debug">
+			<%= debug = debug(params) if Rails.env.development? %>
+		</div>
+		<div id="stats">
+			in progress ...!
+		</div>
+	</div>
 </div>
-</div>
-<div id="col2sub">
-	<h2>TODO</h2>
-	<div id="todo_infix">Col2 tabs</div>
-	<p>TODO list in DB</p>
-	<div id="todo_secure">implement CAN CAN</div>
-	<div id="todo_secure">implement Spinx search</div>
-	<div id="todo_fixed">fix "sticky" footer</div>
-	<div id="todo_fixed">fix nav css</div>
-	<p>suche nach vollzeit</p>
-
-	<p> halb zeit</p>
-	<p> Branche</p>
-	<p> oder Beruf</p>
-	<p> auf Deutsch (l18n)</p>
-	<p> Postleitzahl eingabe und radius in km</p>
-	<div id="todo_fixed">fix debug_col in ie</div>
-	<div id="todo_bug">Name cuted off if put in favorit</div>
-	<div id="todo">COL_1 belong to User</div>
-	<div id="todo">COL_3 belong to Pins</div>
-	<div id="todo">COL_2 belong to Stats</div>
-	
-
-	
-</div>
-
-

@@ -1,0 +1,65 @@
+div#debug{
+	font-size:10px;
+	
+}
+
+
+ul#tab-nav li.current {
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+ul#tab-nav li.current a{
+	background-color: #FFFFFF;
+	color: #000000;
+	padding-top: 4px;
+	position:relative;
+	top:1px;
+	border-bottom: 1px solid #FFFFFF;
+	
+}
+
+ul#tab-nav {
+border-bottom:1px solid #66CC66;
+font:bold 11px verdana,arial,sans-serif;
+list-style-type:none;
+margin:1em 0;
+padding:3px 10px;
+text-align:left;
+}
+
+ul#tab-nav li {
+	display:inline;
+	margin-left:0px;
+}
+
+
+ul#tab-nav li a { /* settings for all tab links */
+padding: 3px 4px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
+border: 1px solid #6c6; /* set border COLOR as desired; usually matches border color specified in #tabnav */
+background-color: #cfc; /* set unselected tab background color as desired */
+color: #666; /* set unselected tab link color as desired */
+margin-right: 0px; /* set additional spacing between tabs as desired */
+text-decoration: none;
+border-bottom: none;
+}
+
+ul#tab-nav a:hover {
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+
+
+div#tab1.tab {
+	color:blue;
+}
+
+
+
+#tab-content  {
+	font-size:10px;
+	
+}
+
+#debug {
+	font-size:10px;
+}
