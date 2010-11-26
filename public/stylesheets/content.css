@@ -20,21 +20,29 @@ html, body { height:100%;}
 }
 
 
-.searchlist {
-	padding:2px 5px;
+#searchlist {
+	padding:5px 0px;
 	margin-left: 20px;
   	height:20px;
 	float:left;
-	font-size:18px;
-	z-index:999;
+	font-size:12px;
+	
+	/*width:200px; */
 }
 
+.inactive{
+	color:#666666;
+}
 .button { 
 	
 	color:#050;
+	font-size:12px;
+}
+
+.buttonef {
 	float:left; 
   	margin:5px 10px;
-	font-size:12px;
+	
 }
 
 .hideme a {

@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  
+  before_filter :authenticate_user!, :except => [:show, :index]
   # GET /todos
   # GET /todos.xml
   def index

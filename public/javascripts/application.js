@@ -28,6 +28,36 @@
 	$.getScript("/javascripts/tabs.js", function() {
 		
 	});
+	
+	$('input.clear').each(function(){
+		$(this)
+		  .data('default',$(this).val())
+		  .addClass('inactive')
+		      .focus(function() {
+		        $(this).removeClass('inactive');
+		        if($(this).val() == $(this).data('default') || '') {
+		          $(this).val('');
+		        }
+		      })
+		      .blur(function() {
+		        var default_val = $(this).data('default');
+		        if($(this).val() == '') {
+		          $(this).addClass('inactive');
+		          $(this).val($(this).data('default'));
+		        }
+		      });
+		  });
+
+		
+
+	
+	
+//	$.getScript("/javascripts/formhints.js", function() {
+		
+//	});
+	
+//	$("input.searchlist").ztInputHint();
+	
 /*		
 		var latlng = new google.maps.LatLng(48.173, 16.413);
 		

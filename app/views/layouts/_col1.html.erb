@@ -1,9 +1,23 @@
 <h2>User</h2>
 <% if user_signed_in?  %>
 	<p><%= current_user.email %>.</p> Not You ?
-	<%= link_to "Sign out", destroy_user_session_path %>
+	<%= link_to "Sign out", destroy_user_session_path %><br />
+	<%= link_to "Edit me", edit_user_registration_path %><br />
+	<% if current_user.admin? %>
+	ADMIN IN THE HOUSE
+	<% else %>
+	Welcome !
+	<% end %>
 <% else  %>
-	<%= link_to "Sign up",new_user_registration_path %> or 
-	<%= link_to "sign in", new_user_session_path %>
+<%= form_for("user", :url => user_session_path) do |f| %>
+	<p>Email:<br />
+  <%= f.text_field :email , :size => 15 %></p>
+	<p>Password:<br />
+  <%= f.password_field :password, :size=>10 %></p>
+  <%= f.submit 'Sign in' %>
+<% end %>
+  
+	<%= link_to "Sign up",new_user_registration_path %>
+	<%#= link_to "Sign in", new_user_session_path %>
 <% end  %>
 
