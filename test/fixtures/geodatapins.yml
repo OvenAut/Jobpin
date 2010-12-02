@@ -1,3 +1,17 @@
+# == Schema Information
+# Schema version: 20101202210103
+#
+# Table name: geodatapins
+#
+#  id                :integer         not null, primary key
+#  formatted_address :string(255)
+#  lat               :float
+#  lng               :float
+#  pindata_id        :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
