@@ -10,7 +10,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101126025257) do
+ActiveRecord::Schema.define(:version => 20101202210103) do
+
+  create_table "employments", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "geodatapins", :force => true do |t|
+    t.string   "formatted_address"
+    t.float    "lat"
+    t.float    "lng"
+    t.integer  "pindata_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "occupations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pindatas", :force => true do |t|
+    t.text     "body"
+    t.string   "company"
+    t.string   "joblocation"
+    t.string   "education"
+    t.integer  "occupation_id"
+    t.integer  "employment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pins", :force => true do |t|
     t.string   "company"
@@ -18,6 +50,16 @@ ActiveRecord::Schema.define(:version => 20101126025257) do
     t.decimal  "longitude"
     t.string   "title"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "syspindatas", :force => true do |t|
+    t.string   "sitesrcid",  :default => "",    :null => false
+    t.string   "dataurl"
+    t.string   "datasrc"
+    t.boolean  "geocook",    :default => false
+    t.integer  "pindata_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

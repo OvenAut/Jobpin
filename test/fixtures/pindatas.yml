@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  body: MyText
+  company: MyString
+  joblocation: MyString
+  education: MyString
+  occupation_id: 1
+  employment_id: 1
+
+two:
+  body: MyText
+  company: MyString
+  joblocation: MyString
+  education: MyString
+  occupation_id: 1
+  employment_id: 1

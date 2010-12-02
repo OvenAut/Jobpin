@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  sitesrcid: MyString
+  dataurl: MyString
+  datasrc: MyString
+  geocook: 
+  pindata_id: 1
+
+two:
+  sitesrcid: MyString
+  dataurl: MyString
+  datasrc: MyString
+  geocook: 
+  pindata_id: 1

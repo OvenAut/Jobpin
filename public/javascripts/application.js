@@ -97,6 +97,8 @@
 	page = page + window.location.search;
 //	alert(page);
 
+
+function maptstart(){
 	$.getJSON(page,
 	  
 	function(data) {
@@ -220,7 +222,7 @@
 	}); // getJSON /lists
 	
 //	$.getJSON("/lists/1",function(data){
-		
+	};	
 //	});
 	
 });
