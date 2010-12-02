@@ -13,5 +13,6 @@ class ListsController < ApplicationController
     respond_with(@list = Pin.find(params[:id]))
   end
 
-
 end
+
+

@@ -15,16 +15,14 @@
 			<% id_todo = "todo_fixed" if todo.finished  %>
 			
 			<p id="<%= id_todo %>">
-			  <tr>
-			    <td><%= todo.name %></td>
-			    <td><%= link_to 'Show', todo %></td>
+				<%= todo.name %></p>
+			    <%= link_to 'Show', todo %>
 					<% if user_signed_in?  %>
 			
-			    <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-			    <td><%= link_to 'Destroy', todo, :confirm => 'Are you sure?', :method => :delete %></td>
+			    <%= link_to 'Edit', edit_todo_path(todo) %>
+			    <%= link_to 'Destroy', todo, :confirm => 'Are you sure?', :method => :delete %>
 			<% end  %>
-			  </tr>
-			</p>
+		
 			<% end %>
 			
 			

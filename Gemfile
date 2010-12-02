@@ -10,6 +10,12 @@ gem 'nokogiri', '1.4.3.1'
 gem 'mechanize', '1.0.0'
 gem 'jquery-rails', '0.2.4'
 gem 'devise', '1.1.rc2'
+group :development do
+#	gem 'rspec-rails', '2.0.1'
+	gem 'annotate-models', '1.0.4'
+#	gem 'faker', '0.3.1'
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

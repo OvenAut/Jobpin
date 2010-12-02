@@ -8,6 +8,38 @@
 	color:green;
 }
 
+div#todo p {
+	float: left;
+	display: block;
+	width: 170px;
+	float: left;
+}
+
+
+div#todo a {
+	width: 25%;
+	float:right;
+}
+
+div#indexlist {
+	width: 100%;
+	border-bottom: 2px dashed gray;
+	background-color: #ebe6dc;
+	margin-top: 10px;
+}
+
+#indexlist div.value {
+	float: none;
+	clear: none;
+	width: 100%;
+	color: #797624;
+}
+
+#indexlist div.key {
+	width: 80px;
+	float: left;
+	color: #00093f;
+}
 #todo_secure {
 	color:red;
 }
