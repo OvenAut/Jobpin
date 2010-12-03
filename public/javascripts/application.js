@@ -192,7 +192,7 @@ function mapstart(){
 					var pindatas = this
 					
 //					alert(this.pin.title);
-					var name = pindatas.title + " " + pindatas.id;
+					var name = pindatas.company + " " + pindatas.education;
 					var lat = pindatas.lat;
 					var lng = pindatas.lng;
 		   		var point = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));

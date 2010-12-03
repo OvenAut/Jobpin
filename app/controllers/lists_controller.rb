@@ -9,7 +9,7 @@ class ListsController < ApplicationController
     #lookfor = where('company LIKE ?', "%#{params[:search_for]}%")
     lookfor = "WHERE pindatas.company LIKE '%#{params[:search_for]}%'" if  (params[:search_for])
     respond_with(@lists = Pindata.find_by_sql(" SELECT *  FROM pindatas
-      INNER JOIN geodatapins ON geodatapins.pindata_id = pindatas.id #{lookfor} ") , :only =>[:lat, :lng, :company, :id])
+      INNER JOIN geodatapins ON geodatapins.pindata_id = pindatas.id #{lookfor} ") , :only =>[:lat, :lng, :company, :id ,:education])
     #puts @lists.inspect  
   end
 

@@ -35,7 +35,7 @@ class Pindata < ActiveRecord::Base
       where('company LIKE ?', "%#{search_for}%")
       #find_by_sql()
     else
-      all #scoped
+       all#scoped
     end
   end
   
