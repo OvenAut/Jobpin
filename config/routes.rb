@@ -5,6 +5,7 @@ Jobpins::Application.routes.draw do
 
   resources :pins
   resources :lists
+  match 'getgeodata' => 'getgeodata#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

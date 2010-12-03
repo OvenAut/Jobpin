@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20101202210103
+# Schema version: 20101203024606
 #
 # Table name: pindatas
 #
@@ -12,11 +12,23 @@
 #  employment_id :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  valid         :boolean
 #
 
 class Pindata < ActiveRecord::Base
+  attr_accessor :valid
+  
   belongs_to :occupation, :dependent => :destroy 
   belongs_to :employment, :dependent => :destroy  
   has_one :syspindata, :dependent => :destroy 
   has_one :geodatapin, :dependent => :destroy 
+  
+  validates_presence_of :body, :occupation_id , :employment_id
+  
+  
+  def set_valid
+    
+  end
+  
+  
 end

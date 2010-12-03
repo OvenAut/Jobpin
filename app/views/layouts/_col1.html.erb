@@ -5,6 +5,7 @@
 	<%= link_to "Edit me", edit_user_registration_path %><br />
 	<% if current_user.admin? %>
 	ADMIN IN THE HOUSE
+	<%= link_to 'Get Data', getgeodata_path %>
 	<% else %>
 	Welcome !
 	<% end %>

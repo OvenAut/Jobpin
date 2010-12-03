@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101202210103) do
+ActiveRecord::Schema.define(:version => 20101203024606) do
 
   create_table "employments", :force => true do |t|
     t.string   "name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20101202210103) do
     t.integer  "employment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "valid"
   end
 
   create_table "pins", :force => true do |t|

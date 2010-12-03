@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20101202210103
+# Schema version: 20101203024606
 #
 # Table name: pindatas
 #
@@ -12,6 +12,7 @@
 #  employment_id :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  valid         :boolean
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
