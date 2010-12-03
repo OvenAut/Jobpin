@@ -1,0 +1,16 @@
+<%# col_1 = @pins %>
+<%# col_2 = debug(params) if Rails.env.development? %>
+<%# col_3 = nil  %>
+<%#= render :partial => "layouts/page", :locals => {:col1=>col_1, :col2=>col_2, :col3=>col_3} %>
+
+
+<% if @pinsdata.any?  %>
+<% @pinsdata.each_with_index do |pin, i| %>
+<div id="indexlist">
+<div class="key1"><%= link_to "Nr. #{i.to_i+1}", pin %></div>
+<div class="key">Company: </div><div class="value"><%= pin.company %></div>
+<div class="key">Joblocation: </div><div class="value"><%= pin.joblocation %></div>
+<div class="key">Education: </div><div class="value"><%= pin.education %></div>
+</div>
+<% end  %>
+<% end %>

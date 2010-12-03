@@ -16,7 +16,7 @@
 #
 
 class Pindata < ActiveRecord::Base
-  attr_accessor :valid
+  attr_accessor :valid_pin
   
   belongs_to :occupation, :dependent => :destroy 
   belongs_to :employment, :dependent => :destroy  
@@ -26,8 +26,17 @@ class Pindata < ActiveRecord::Base
   validates_presence_of :body, :occupation_id , :employment_id
   
   
-  def set_valid
+  def set_valid_pin
     
+  end
+  def self.search(search_for)
+    
+    if search_for
+      where('company LIKE ?', "%#{search_for}%")
+      #find_by_sql()
+    else
+      all #scoped
+    end
   end
   
   

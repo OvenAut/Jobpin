@@ -1,0 +1,21 @@
+<h1>New JobPin</h1>
+<% form_for(pin,:remote=>true) do |f| %>
+    <p>
+	<b><%= f.label :company %><br /></b>
+    <%= f.text_field :company %>
+  </p>
+    <%= f.hidden_field :latitude %>
+    <%= f.hidden_field :longitude %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows=>3 %>
+  </p>
+  <p>
+  	<%= f.submit "Create" %>
+  </p>
+<% end %>
+

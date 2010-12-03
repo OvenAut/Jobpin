@@ -19,8 +19,8 @@ class Syspindata < ActiveRecord::Base
   has_one :occupation, :through => :pindata
   has_one :geodatapin, :through => :pindata
   
-  validates_uniqueness_of :sitescid
-  validates_presence_of :sitescid, :dataurl, :datasrc ,:pindata_id
+  validates_uniqueness_of :sitesrcid
+  validates_presence_of :sitesrcid, :dataurl, :datasrc ,:pindata_id
   
   
 end

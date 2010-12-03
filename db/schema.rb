@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20101203024606) do
     t.integer  "employment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "valid"
+    t.boolean  "valid_pin"
   end
 
   create_table "pins", :force => true do |t|

@@ -80,7 +80,7 @@
 	//alert($params(this.href));
 //	alert(gup("pins"));
 	//THIS.HREF
-	var myregexp = "/pins";
+	var myregexp = "/pindatas";
 	var page = window.location.pathname.replace(myregexp, "/lists");
 	if (window.location.pathname.search(myregexp) >= 0)
 	{
@@ -98,7 +98,7 @@
 //	alert(page);
 
 
-function maptstart(){
+function mapstart(){
 	$.getJSON(page,
 	  
 	function(data) {
@@ -107,34 +107,34 @@ function maptstart(){
 		
 		$.each(data, function() { 
 		
-			if (this.pin)
-			var pins = this.pin;
+			if (this.pindata)
+			var pindatas = this.pindata;
 			else
-			var pins = this;
+			var pindatas = this;
 			
-			var x = pins.latitude*10000;
+			var x = pindatas.lat*10000;
 			x = Math.round(x) ;
-			pins.latitude = x/10000;
+			pindatas.lat = x/10000;
 			
-			var y = pins.longitude*10000;
+			var y = pindatas.lng*10000;
 			y = Math.round(y) ;
-			pins.longitude = y/10000;
+			pindatas.lng = y/10000;
 			
 	//	alert(pins.latitude + " " + maxlat);
-		if (maxlat < pins.latitude) {
-		maxlat = pins.latitude;
+		if (maxlat < pindatas.lat) {
+		maxlat = pindatas.lat;
 //		alert(maxlat);
 		};
 		
-		if (minlat > pins.latitude) {
-		minlat = pins.latitude;
+		if (minlat > pindatas.lat) {
+		minlat = pindatas.lat;
 		};
 		
-		if (maxlng < pins.longitude)
-		maxlng = pins.longitude;
+		if (maxlng < pindatas.lng)
+		maxlng = pindatas.lng;
 		
-		if (minlng > pins.longitude)
-		minlng = pins.longitude;
+		if (minlng > pindatas.lng)
+		minlng = pindatas.lng;
 		
 		
 		});
@@ -186,15 +186,15 @@ function maptstart(){
 
 		$.each(data, function(){
 			
-					if (this.pin)
-					var pins = this.pin
+					if (this.pindata)
+					var pindatas = this.pindata
 					else
-					var pins = this
+					var pindatas = this
 					
 //					alert(this.pin.title);
-					var name = pins.title + " " + pins.id;
-					var lat = pins.latitude;
-					var lng = pins.longitude;
+					var name = pindatas.title + " " + pindatas.id;
+					var lat = pindatas.lat;
+					var lng = pindatas.lng;
 		   		var point = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));
 					// map.bounds.extend(point);
 					// add the marker itself
@@ -205,15 +205,18 @@ function maptstart(){
 					 });
 					google.maps.event.addListener(marker, 'click', function() {
 						MAP.panTo(point);
-						$.getJSON("/lists/"+ pins.id,
-						function(list) {
-						content = '<div>Company: ' + list.pin.company + '</div>';
-						content += '<div>Title: ' + list.pin.title + '</div>';
-						content += '<div>Description: ' + list.pin.description + '</div>';
-						content += '<div><a href="/pins/'+ list.pin.id +'" target="_parent">details</a></div>';
+						$.getJSON("/lists/"+ pindatas.id,
+						function(lists) {
+							
+							
+							//alert(lists);
+						content = '<div>Company: ' + lists[0].pindata.company + '</div>';
+						content += '<div>Joblocation: ' + lists[0].pindata.joblocation + '</div>';
+						content += '<div>Education: ' + lists[0].pindata.education + '</div>';
+						content += '<div><a href="/pindatas/'+ lists[0].pindata.id +'" target="_parent">details</a></div>';
 						infowindow.setContent(content);
 						infowindow.open(MAP,marker);
-						
+					
 						});
 					});
 					//infowindow.setContent(name);
@@ -224,5 +227,5 @@ function maptstart(){
 //	$.getJSON("/lists/1",function(data){
 	};	
 //	});
-	
+	mapstart();
 });

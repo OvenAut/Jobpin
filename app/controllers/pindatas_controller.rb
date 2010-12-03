@@ -1,4 +1,4 @@
-class PinsController < ApplicationController
+class PindatasController < ApplicationController
   
   before_filter :authenticate_user!, :except => [:show, :index]
   # GET /pins/map

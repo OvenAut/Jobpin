@@ -19,7 +19,8 @@ class Pin < ActiveRecord::Base
   def self.search(search_for)
     
     if search_for
-      where('company LIKE ?', "%#{search_for}%")
+      includes("geodatapin").where('company LIKE ?', "%#{search_for}%")
+      #find_by_sql()
     else
       all #scoped
     end

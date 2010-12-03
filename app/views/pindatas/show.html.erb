@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= @pindata.company %>
+</p>
+
+<p>
+  <b>Joblocation:</b>
+  <%= @pindata.joblocation %>
+</p>
+
+<p
+  <b>Education:</b>
+  <%= @pindata.education %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @pindata.body %>
+</p>
+
+<p>
+  <b>Occupation:</b>
+  <%= @pindata.occupation.name %>
+</p>
+<p>
+  <b>Employment:</b>
+  <%= @pindata.employment.name %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_pindata_path(@pindata) if user_signed_in?  %> |
+<%= link_to 'Back', pindatas_path %>
