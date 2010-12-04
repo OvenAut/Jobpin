@@ -1,25 +1,37 @@
-#todo_fixed {
+/* @override http://localhost:3000/stylesheets/todo.css */
+
+a#todo_fixed {
 	text-decoration: line-through;
 	color:gray;
-}
-
-#todo_infix {
-	text-decoration:underline;
-	color:green;
-}
-
-div#todo p {
+	width: 100%;
 	float: left;
 	display: block;
-	width: 170px;
+}
+
+a#todo_infix {
+	text-decoration:underline;
+	color:green;
+	width: 100%;
+	float: left;
+	clear: none;
+	display: block;
+}
+
+a#todo_normal {
+	text-decoration: none;
+	width: 100%;
 	float: left;
 }
 
-
-div#todo a {
-	width: 25%;
-	float:right;
+#todo p {
+	width: 100%;
 }
+div#todo {
+	display: block;
+	width: auto;
+	float: left;
+}
+
 
 div#indexlist {
 	width: 100%;
@@ -40,8 +52,9 @@ div#indexlist {
 	float: left;
 	color: #00093f;
 }
-#todo_secure {
+a#todo_secure {
 	color:red;
+	text-decoration: none;
 }
 
 #todo_bug {

@@ -1,5 +1,17 @@
 
 <h2>Stats</h2>
+<% if user_signed_in?  %>
+
+<%= form_for(putTodo) do |f|%>
+<%= f.text_area(:name,:cols =>30,:rows => 6, :class =>"clear", :value=>"New Todo") %><br />
+<%= f.label :defect %><br />
+<%= f.check_box :defect %>
+
+<%= f.submit("New Todo",:class=>"todo_button") %>
+<% end %>
+<% end %>
+
+
 <div class="tab">
 	<ul id="tab-nav">
 		<li class="current"><a href="#todo">Todo</a></li>
@@ -9,22 +21,7 @@
 	<div id="tab-content">
 		<div id="todo">
 			
-			<% getTodoList.each do |todo| %>
-			
-			<% id_todo = "todo_secure" if todo.defect  %>
-			<% id_todo = "todo_fixed" if todo.finished  %>
-			
-			<p id="<%= id_todo %>">
-				<%= todo.name %></p>
-			    <%= link_to 'Show', todo %>
-					<% if user_signed_in?  %>
-			
-			    <%= link_to 'Edit', edit_todo_path(todo) %>
-			    <%= link_to 'Destroy', todo, :confirm => 'Are you sure?', :method => :delete %>
-			<% end  %>
-		
-			<% end %>
-			
+			<%= render :partial =>"/layouts/todo" %>
 			
 			<!--
 			

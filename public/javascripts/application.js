@@ -29,7 +29,7 @@
 		
 	});
 	
-	$('input.clear').each(function(){
+	$('input.clear , textarea.clear').each(function(){
 		$(this)
 		  .data('default',$(this).val())
 		  .addClass('inactive')
@@ -47,6 +47,15 @@
 		        }
 		      });
 		  });
+		
+		
+	$('#new_todo').submit(function(){
+		$.post($(this).attr("action") + ".js", $(this).serialize(), null,'script');
+		//$.get(this.action, $(this).serialize(), null,'script');
+		return false;
+	  });
+	
+	
 
 		
 

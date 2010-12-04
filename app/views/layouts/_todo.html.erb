@@ -1,0 +1,20 @@
+
+<% getTodoList.each do |todo| %>
+<% id_todo = "todo_normal" %>
+<% id_todo = "todo_secure" if todo.defect  %>
+<% id_todo = "todo_fixed" if todo.finished  %>
+
+<!-- <p id="<%= id_todo %>">
+	<%#= todo.name %></p> -->
+    <%= link_to todo.name, todo, :id=>id_todo %>
+		<% unless todo.finished %>
+		<p>Created <%= time_ago_in_words(todo.created_at) %> ago</p><br />
+		<% end %>
+		
+		<!-- <% if user_signed_in?  %>
+
+    <%= link_to 'Edit', edit_todo_path(todo) %>
+    <%= link_to 'Destroy', todo, :confirm => 'Are you sure?', :method => :delete %>
+		<% end  %> -->
+
+<% end %>

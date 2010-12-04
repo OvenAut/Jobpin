@@ -1,10 +1,10 @@
 class TodosController < ApplicationController
   
-  before_filter :authenticate_user!, :except => [:show, :index]
+  #before_filter :authenticate_user!, :except => [:show, :index]
   # GET /todos
   # GET /todos.xml
   def index
-    @todos = Todo.all
+    @todos = Todo.order("created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -48,6 +48,7 @@ class TodosController < ApplicationController
       if @todo.save
         format.html { redirect_to(@todo, :notice => 'Todo was successfully created.') }
         format.xml  { render :xml => @todo, :status => :created, :location => @todo }
+        format.js
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @todo.errors, :status => :unprocessable_entity }
