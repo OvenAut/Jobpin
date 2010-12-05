@@ -48,6 +48,13 @@
 		      });
 		  });
 		
+	$('#todo a').each(function(){
+		$(this).click(function(){
+			//$.get($(this.href),null,null,'script');
+			$.getScript(this.href);
+			return false;
+		});
+	});
 		
 	$('#new_todo').submit(function(){
 		$.post($(this).attr("action") + ".js", $(this).serialize(), null,'script');
@@ -55,11 +62,14 @@
 		return false;
 	  });
 	
-	
+	// $('div#col1_content.clearfix a').click(function() {
+	// 	alert($(this).attr("href") + $('input[name=address]').val());
+	// 	return false;
+	// });
+// html body div.page_margins div.page div#main div#col1 div#col1_content.clearfix input#address
+//		html body div.page_margins div.page div#main div#col1 div#col1_content.clearfix a
 
-		
-
-	
+//	html body div.page_margins div.page div#main div#col1 div#col1_content.clearfix
 	
 //	$.getScript("/javascripts/formhints.js", function() {
 		
@@ -166,7 +176,7 @@ function mapstart(){
 	{
 	var marginRation = 0.000;	
 	}
-//	alert(marginRation);
+	//alert(marginRation);
 	
        	 var southWest = new google.maps.LatLng(minlat-marginRation, minlng-marginRation);
 	      var northEast = new google.maps.LatLng(maxlat+marginRation, maxlng+marginRation);

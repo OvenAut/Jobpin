@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(:version => 20101203024606) do
   end
 
   create_table "geodatapins", :force => true do |t|
-    t.string   "formatted_address"
-    t.float    "lat"
-    t.float    "lng"
-    t.integer  "pindata_id"
+    t.string   "formatted_address", :null => false
+    t.float    "lat",               :null => false
+    t.float    "lng",               :null => false
+    t.integer  "pindata_id",        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20101203024606) do
     t.integer  "employment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "valid_pin"
+    t.boolean  "valid_pin",     :default => false
   end
 
   create_table "pins", :force => true do |t|
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(:version => 20101203024606) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",                               :default => false
+    t.boolean  "manager",                             :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

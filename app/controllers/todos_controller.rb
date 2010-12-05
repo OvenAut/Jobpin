@@ -20,6 +20,7 @@ class TodosController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @todo }
+      format.js
     end
   end
 
@@ -63,7 +64,7 @@ class TodosController < ApplicationController
 
     respond_to do |format|
       if @todo.update_attributes(params[:todo])
-        format.html { redirect_to(@todo, :notice => 'Todo was successfully updated.') }
+        format.html { redirect_to(todos_path, :notice => 'Todo was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

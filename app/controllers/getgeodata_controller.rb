@@ -52,7 +52,7 @@ class GetgeodataController < ApplicationController
   #  updated_at :datetime
   #  
 
-
+    before_filter :authenticate_user!
     before_filter :admin_user, :only => :index
 
 
@@ -67,10 +67,11 @@ class GetgeodataController < ApplicationController
     #Cravdata.find_or_create_by_siteid(web)
 
     @loopstatus = true
-    @status = "Fertig" 
-
+    @status = "Negative" 
+    @statustext = params[:getdata][:address]
+    
     action
-    redirect_to(root_path, :notice => "Cravdata !.#{@status}")
+    redirect_to(root_path, :notice => "Cravdata !.#{@status} von #{@statustext}")
 
   end
   
@@ -106,16 +107,20 @@ private
 
 
   def admin_user
-    current_user.admin?
+    
+
+    redirect_to(root_path) if !current_user.admin?
+  
+    
   end
   
 
   def updatestats()
     @web_pindata.valid_pin = true
-    @loopstatus = false
-    puts @web_geodatapin.lat
-    puts @web_geodatapin.lng
-    puts @web_occupation.name
+    #@loopstatus = false
+    # puts @web_geodatapin.lat
+    # puts @web_geodatapin.lng
+    # puts @web_occupation.name
     @data = Occupation.find_by_name(@web_occupation.name)
     #puts (@data.to_a).id
     if @data
@@ -141,7 +146,7 @@ private
         @web_pindata.employment_id = @data.id.to_i
       else
         @data2 = Employment.new(:name => @web_employment.name)
-        puts @data2.inspect
+        # puts @data2.inspect
 
         if @data2.save
           @web_pindata.employment_id = @data2.id.to_i
@@ -168,8 +173,8 @@ private
     
     
     if data_pindata.save
-      puts @web_geodatapin.lat
-      puts @web_geodatapin.lng
+      #puts @web_geodatapin.lat
+      #puts @web_geodatapin.lng
       
       @web_geodatapin.pindata_id = data_pindata.id.to_i
       data_geodatapin = Geodatapin.new(:formatted_address => @web_geodatapin.formatted_address,         
@@ -233,7 +238,8 @@ private
   def action
 
     #@web.dataurl = "action"
-
+    @status = "Finishd" 
+    
     agent = Mechanize.new
 
 
@@ -252,13 +258,14 @@ private
 
 
     form = agent.page.forms.first
-    form.query = "1020 wien"
+    form.query = @statustext
     form.submit
 
 
 
 
-    pagesmax = ((agent.page.search("b:nth-child(3)").text.to_i)/9).to_i
+    pagesmax = ((agent.page.search("b:nth-child(3)").text.to_i)/10).to_i
+    pagesmax.floor
     #puts pagesmax 
 
     #agent.page.links.each do |link|
@@ -269,11 +276,12 @@ private
     #end
 
 
-   10.times do
+   pagesmax.times do
+   #1.times do
 
      
-    agent.page.links_with(:href => /index=/).each do |link|
-      #if @loopstatus
+    agent.page.links_with(:href => /index=/).each do |link|# if @loopstatus == true
+      if @loopstatus == true
       
       link.click
       #matchval =/[^\n?\r?]([A-Z]\w*\b?[^\n?\r?]\S*\s?[1-9]+\/?-*[1-9]*\/?[1-9]*)(?=,?\s*.{0,3}(?i:1020 Wien))/
@@ -295,10 +303,10 @@ private
         #@web.state = form.query
         @web_pindata.body = agent.page.search('td.tdcontent').text
 
-        #f = Net::HTTP.get_response(URI.parse(URI.encode("http://maps.google.com/maps/api/geocode/json?address=#{@web.address} #{form.query}&sensor=false")))
-        #json = ActiveSupport::JSON.decode(f.body)
-        #@web.lat = json["results"][0]["geometry"]["location"]["lat"]
-        #@web.lng = json["results"][0]["geometry"]["location"]["lng"]
+        # f = Net::HTTP.get_response(URI.parse(URI.encode("http://maps.google.com/maps/api/geocode/json?address=#{@web.address} #{form.query}&sensor=false")))
+        # json = ActiveSupport::JSON.decode(f.body)
+        # @web.lat = json["results"][0]["geometry"]["location"]["lat"]
+        # @web.lng = json["results"][0]["geometry"]["location"]["lng"]
         
         #@google_geo.getgeocode!(address,form.query)
         #@web_geodatapin2.getgeocode!(address,form.query)
@@ -308,11 +316,14 @@ private
         #attr :lat ,:lng ,:address
         #puts "i wa hier ::::::::::::::::_--------"
         @web_syspindata.geocook = false
-         f = Net::HTTP.get_response(URI.parse(URI.encode("http://maps.google.com/maps/api/geocode/json?address=#{address} #{form.query}&sensor=false")))
+        f = Net::HTTP.get_response(URI.parse(URI.encode("http://maps.google.com/maps/api/geocode/json?address=#{address} #{form.query}&sensor=false")))
 
         json = ActiveSupport::JSON.decode(f.body)
         @web_geodatapin.lat = json["results"][0]["geometry"]["location"]["lat"]
         @web_geodatapin.lng = json["results"][0]["geometry"]["location"]["lng"]
+        if (json['status'] != "OK") 
+              @loopstatus = false 
+        end
         @web_geodatapin.formatted_address  = json["results"][0]["formatted_address"]
         @web_syspindata.geocook = true
         #puts @lat
@@ -337,31 +348,43 @@ private
         #puts @web_occupation.name
         #puts "before update"
         updatestats()
+        
+        
+        
+        # puts @web_pindata.inspect
+        #         puts "@web_pindata.inspect"
+        #         
+        #         puts @web_geodatapin.inspect
+        #         puts "@web_geodatapin.inspect"
+        #         puts @web_employment.inspect
+        #         puts "@web_employment.inspect"
+        #         puts @web_occupation.inspect
+        #         puts "@web_occupation.inspect"
+        #         puts @web_syspindata.inspect
+        #         puts "@web_syspindata.inspect"
+        #         
+        # #puts @google_geo.inspect
+
+
+        
+        
         end
       
-    #end
+    end
     
     
   end
-    10.times {agent.back}
+    if agent.page == nil
+      @loopstatus = false
+    end
+      if @loopstatus == true
+          10.times {agent.back}
 
-     agent.page.links.find{ |l| l.text =~ /Vorw.?rts/}.click
+          agent.page.links.find{ |l| l.text =~ /Vorw.?rts/}.click
 
+
+      end
    end
-   
-   # puts @web_pindata.inspect
-   # puts "@web_pindata.inspect"
-   # 
-   # puts @web_geodatapin.inspect
-   # puts "@web_geodatapin.inspect"
-   # puts @web_employment.inspect
-   # puts "@web_employment.inspect"
-   # puts @web_occupation.inspect
-   # puts "@web_occupation.inspect"
-   # puts @web_syspindata.inspect
-   # puts "@web_syspindata.inspect"
-   # #puts @google_geo.inspect
-
   end
 
 end

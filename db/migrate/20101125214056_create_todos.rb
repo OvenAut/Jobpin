@@ -2,8 +2,8 @@ class CreateTodos < ActiveRecord::Migration
   def self.up
     create_table :todos do |t|
       t.string :name
-      t.boolean :finished
-      t.boolean :defect
+      t.boolean :finished, :default => false
+      t.boolean :defect, :default => false
       t.text :body
       t.date :due
 

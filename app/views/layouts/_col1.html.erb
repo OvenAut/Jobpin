@@ -4,8 +4,20 @@
 	<%= link_to "Sign out", destroy_user_session_path %><br />
 	<%= link_to "Edit me", edit_user_registration_path %><br />
 	<% if current_user.admin? %>
-	ADMIN IN THE HOUSE
-	<%= link_to 'Get Data', getgeodata_path %>
+	ADMIN IN THE HOUSE <br />
+	
+	<%= form_for("getdata", :url=> getgeodata_path) do |f| %>
+	<%= f.label :address %><br />
+	<%= f.text_field :address, :size=>15 %><br />
+	<%= f.submit 'Get Geo Data' %>
+	
+	<% end %>
+	<!-- <%= link_to 'Get Data',  %><br />
+	<%= text_field_tag(:address)  %> -->
+	
+	
+	<%= link_to 'TODO Lists', todos_path %><br />
+	
 	<% else %>
 	Welcome !
 	<% end %>
