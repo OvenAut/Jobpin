@@ -31,27 +31,6 @@ div#todo {
 	width: auto;
 	float: left;
 }
-
-
-div#indexlist {
-	width: 100%;
-	border-bottom: 2px dashed gray;
-	background-color: #ebe6dc;
-	margin-top: 10px;
-}
-
-#indexlist div.value {
-	float: none;
-	clear: none;
-	width: 100%;
-	color: #797624;
-}
-
-#indexlist div.key {
-	width: 80px;
-	float: left;
-	color: #00093f;
-}
 a#todo_secure {
 	color:red;
 	text-decoration: none;
@@ -60,3 +39,86 @@ a#todo_secure {
 #todo_bug {
 	color:#005500;
 }
+
+/* @group pinshow */
+#pinshow {
+	background-color: #ebe6dc;
+	margin-top: 10px;
+	margin-right: 1%;
+	margin-left: 1%;
+}
+
+#pinshow a {
+	text-decoration: none;
+	float: none;
+	display: block;
+	width: 100%;
+	background-color: #cbd8c3;
+	font-size: 10px;
+	position: relative;
+	clear: none;
+	color: #7686de;
+}
+
+#pinshow div p{
+	color: navy;
+	display: block;
+	text-align: left;
+	margin-left: 100px;
+}
+
+#pinshow div b {
+	color: black;
+	text-transform: uppercase;
+	width: 100px;
+	float: left;
+	display: inline;
+}
+
+
+
+/* @end */
+
+/* @group pinindex */
+
+#indexlist a {
+	text-decoration: none;
+	float: none;
+	display: block;
+	width: 100%;
+	background-color: #cbd8c3;
+	font-size: 10px;
+	position: relative;
+	clear: none;
+	color: #7686de;
+}
+
+div#indexlist {
+	background-color: #ebe6dc;
+	margin-top: 10px;
+	margin-left: 1%;
+	margin-right: 1%;
+	width: 48%;
+}
+
+/* My Comment */
+
+#indexlist div p{
+	color: navy;
+	display: block;
+	text-align: left;
+	margin-left: 100px;
+}
+
+#indexlist div b {
+	color: black;
+	text-transform: uppercase;
+	width: 100px;
+	float: left;
+	display: inline;
+}
+
+
+
+/* @end */
+

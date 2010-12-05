@@ -1,16 +1,30 @@
-<%# col_1 = @pins %>
-<%# col_2 = debug(params) if Rails.env.development? %>
-<%# col_3 = nil  %>
-<%#= render :partial => "layouts/page", :locals => {:col1=>col_1, :col2=>col_2, :col3=>col_3} %>
-
-
 <% if @pinsdata.any?  %>
 <% @pinsdata.each_with_index do |pin, i| %>
 <div id="indexlist">
-<div class="key1"><%= link_to "Nr. #{i.to_i+1}", pin %></div>
-<div class="key">Company: </div><div class="value"><%= pin.company %></div>
-<div class="key">Joblocation: </div><div class="value"><%= pin.joblocation %></div>
-<div class="key">Education: </div><div class="value"><%= pin.education %></div>
+<%= link_to "Show", pin %>
+
+	
+	<div class="company">
+	  <b>Company:</b>
+	  <p><%= pin.company %></p>
+	</div>
+	<div class="addrss">
+	  <b>Address:</b>
+	  <p><%= delaut(pin.geodatapin.formatted_address) %></p>
+	</div>
+	<div class="occupation">
+	  <b>Occupation:</b>
+	  <p><%= pin.occupation.name %></p>
+	</div>
+	<div class="employment">
+	  <b>Employment:</b>
+	  <p><%= pin.employment.name %></p>
+	</div>
+	<div class="education">
+	  <b>Education:</b>
+	  <p><%= pin.education %></p>
+	</div>
+	
 </div>
 <% end  %>
 <% end %>
