@@ -10,14 +10,36 @@
  */
 
 /* import core styles | Basis-Stylesheets einbinden */
-@import url(/stylesheets/yaml/core/base.css);
+ @import url(/stylesheets/yaml/core/base.css);
 
 /* import screen layout | Screen-Layout einbinden */
-@import url(/stylesheets/yaml/navigation/nav_shinybuttons.css);
+/* @import url(/stylesheets/yaml/navigation/nav_shinybuttons.css); */
+
 @import url(basemod.css);
 @import url(content.css);
-@import url(tabs.css);
 @import url(todo.css);
 
+
+
 /* import print layout | Druck-Layout einbinden */
-@import url(/stylesheets/yaml/print/print_draft.css);
+/* @import url(/stylesheets/yaml/print/print_draft.css); /*
+
+
+/**
+ * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
+ *
+ * (en) YAML core stylesheet
+ * (de) YAML Basis-Stylesheet
+ *
+ * Don't make any changes in this file!
+ * Your changes should be placed in any css-file in your own stylesheet folder.
+ *
+ * @copyright       Copyright 2005-2010, Dirk Jesse
+ * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         3.3
+ * @revision        $Revision: 480 $
+ * @lastmodified    $Date: 2010-10-12 21:56:55 +0200 (Di, 12 Okt 2010) $
+ */

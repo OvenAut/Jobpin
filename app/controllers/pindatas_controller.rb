@@ -25,8 +25,16 @@ class PindatasController < ApplicationController
   # GET /pins
   # GET /pins.xml
   def index
-  @pinsdata = Pindata.search(params[:search_for])
-  
+  @pindata = Pindata.search(params[:search_for])
+  lookfor = ""
+  #@lists = Pindata.new
+  #respond_with(@lists = Pindata.includes("geodatapin").search(params[:search_for]) , :only =>[:latitude, :longitude, :company, :id])
+  #lookfor = "WHERE pindatas.company LIKE %'#{params[:search_for]}'%" if  (params[:search_for])
+  #lookfor = where('company LIKE ?', "%#{params[:search_for]}%")
+  lookfor = "WHERE pindatas.company LIKE '%#{params[:search_for]}%'" if  (params[:search_for])
+  @pindata2 = Pindata.find_by_sql(" SELECT *  FROM pindatas
+    INNER JOIN geodatapins ON geodatapins.pindata_id = pindatas.id #{lookfor} ")
+  #puts @lists.inspect
   #respond_with(@pins)
     #j = ActiveSupport::JSON
     #lists = j.encode(pins)
@@ -42,9 +50,16 @@ class PindatasController < ApplicationController
   # GET /pins/1
   # GET /pins/1.xml
   def show
-    @pindata = Pindata.find(params[:id])
+   @pindata = Pindata.find(params[:id])
+   
     # ActiveRecord::Base.include_root_in_json = true
 #    respond_with(@pin)
+  pins_id = (params[:id])
+  @pindata2 = Pindata.find_by_sql("SELECT *  FROM pindatas
+  INNER JOIN geodatapins ON geodatapins.pindata_id = pindatas.id
+  WHERE pindatas.id = (#{pins_id}) ")
+  #puts @pindata.inspect
+
   end
 
   # GET /pins/new

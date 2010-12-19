@@ -25,6 +25,8 @@
 //document).ready(	
  $(function() {
 
+	//alert(pindatasrc);
+	
 	$.getScript("/javascripts/tabs.js", function() {
 		
 	});
@@ -118,13 +120,19 @@
 
 
 function mapstart(){
-	$.getJSON(page,
+//	$.getJSON(page,
 	  
-	function(data) {
+//	function(data) {
 		//var data = 
 //		data = data2
 		
-		$.each(data, function() { 
+	//	$.each(pindatasrc, function(){
+	//	alert(pindatasrc[0]);
+
+	//	});
+		
+		
+		$.each(pindatasrc, function() { 
 		
 			if (this.pindata)
 			var pindatas = this.pindata;
@@ -198,12 +206,45 @@ function mapstart(){
 	    };
 		
 		
+		
 		var MAP = new google.maps.Map(document.getElementById("map"),myOptions);
 		MAP.fitBounds(bounds);
 
+					var imageurl = '/images/pinred.png';
+					// Marker sizes are expressed as a Size of X,Y
+					  // where the origin of the image (0,0) is located
+					  // in the top left of the image.
+
+					  // Origins, anchor positions and coordinates of the marker
+					  // increase in the X direction to the right and in
+					  // the Y direction down.
+					  var image = new google.maps.MarkerImage(imageurl,
+					      // This marker is 20 pixels wide by 32 pixels tall.
+					      new google.maps.Size(15, 23),
+					      // The origin for this image is 0,0.
+					      new google.maps.Point(0,0),
+					      // The anchor for this image is the base of the flagpole at 0,32.
+					      new google.maps.Point(7, 23));
+					  var shadow = new google.maps.MarkerImage(imageurl,
+						// The shadow image is larger in the horizontal dimension
+					 	// while the position and offset are the same as for the main image.
+						new google.maps.Size(33, 23),
+						new google.maps.Point(15,0),
+								  					      new google.maps.Point(0, 23));
+								  					      // Shapes define the clickable region of the icon.
+								      // The type defines an HTML <area> element 'poly' which
+					      // traces out a polygon as a series of X,Y points. The final
+					      // coordinate closes the poly by connecting to the first
+					      // coordinate.
+					  var shape = {
+					      coord: [1, 1, 1, 8, 7, 23, 15 , 8, 15, 1],
+					      type: 'poly'
+					  };
+					
+
 	//	MAP.setZoom(map.getBoundsZoomLevel(bounds));
 
-		$.each(data, function(){
+		$.each(pindatasrc, function(){
 			
 					if (this.pindata)
 					var pindatas = this.pindata
@@ -211,6 +252,7 @@ function mapstart(){
 					var pindatas = this
 					
 //					alert(this.pin.title);
+							
 					var name = pindatas.company + " " + pindatas.education;
 					var lat = pindatas.lat;
 					var lng = pindatas.lng;
@@ -221,6 +263,9 @@ function mapstart(){
 					    position: point,
 					    map: MAP,
 					    title: name,
+						icon: image,
+						shape: shape,
+						shadow: shadow
 					 });
 					google.maps.event.addListener(marker, 'click', function() {
 						MAP.panTo(point);
@@ -241,7 +286,7 @@ function mapstart(){
 					//infowindow.setContent(name);
 					
 		    });
-	}); // getJSON /lists
+//	}); // getJSON /lists
 	
 //	$.getJSON("/lists/1",function(data){
 	};	

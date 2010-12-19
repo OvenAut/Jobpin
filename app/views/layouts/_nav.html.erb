@@ -1,37 +1,15 @@
-<div id="nav">
-  <!-- skiplink anchor: navigation -->
-  <a id="navigation" name="navigation"></a>
-  <div class="hlist">
-    <!-- main navigation: horizontal list -->
+
 		<div id="searchlist">
 		<%= form_tag pindatas_path, :method => 'get' do %>
 		<%= text_field_tag :search_for ,'i look for...', :class=>"clear" %>
 		<%#= text_field_tag :search_for ,params[:search_for], :class=>"searchlist" %>
 		
-		<%= text_field_tag :search_were ,'Were I look for...',:class=>"clear" %>
+		<%#= text_field_tag :search_were ,'Were I look for...',:class=>"clear" %>
 		<%= submit_tag "search",:name => nil, :class=>"button" %>
 		<% end %>
 		</div>
 		<div id="railsmsg">
 			<p class="notice"><%= notice %></p>
-		  <p class="alert"><%= alert %></p>
-			
+		  <p class="alert"><%= alert %></p>			
 		</div>
-		  <div id="topnav">
-		    <!-- start: skip link navigation -->
-		    <a class="skip" title="skip link" href="#navigation">Skip to the navigation</a><span class="hideme">.</span>
-		    <a class="skip" title="skip link" href="#content">Skip to the content</a><span class="hideme">.</span>
-		    <!-- end: skip link navigation -->
-<% if user_signed_in?  %>
-	<%= link_to "Sign out", destroy_user_session_path %>
-<% else  %>
-	<%= link_to "Sign up",new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-	
-<% end  %>
-		 | <a href="#">Contact</a> | <a href="#">Imprint</a>
 
-		  </div>
-		
-
-  </div>
-</div>

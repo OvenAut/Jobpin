@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Jobpins v012b</title>
+  <title>Jobpins v013b</title>
   <%#= stylesheet_link_tag :all %>
 	<%= render 'layouts/stylesheets' %>
-	
 	<%= javascript_include_tag "loader.js" %>
-	
-	
-
-
-
+	<%= javascript_tag "var pindatasrc=" + @pindata2.to_json %>
   <%= csrf_meta_tag %>
 <link rel="shortcut icon" href="/favicon.ico" />
 </head>
@@ -27,11 +22,9 @@
 				<h1>JOBPINS</h1>
 				<p> find your job near you !!!</p>
 
-			</div>
 
-	<%#= render :partial =>"layouts/header" %>
 	<%= render :partial =>"layouts/nav" %>
-	
+			</div>	
 	<div id="teaser">
 		<div id="map">
 		</div>
@@ -73,6 +66,15 @@
 <div id="footer_margins">
   <div id="footer">Layout based on <a href="http://www.yaml.de/">YAML</a>
 		&nbsp;Version beta
+		<% if user_signed_in?  %>
+			<%= link_to "Sign out", destroy_user_session_path %>
+		<% else  %>
+			<%= link_to "Sign up",new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+
+		<% end  %>
+				 | <a href="#">Contact</a> | <a href="#">Imprint</a>
+
+		
   </div>
 </div>
 

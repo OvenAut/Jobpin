@@ -1,12 +1,101 @@
-body { background: #EDEAE1 ; font-size: 12px;
-	font-family:"Verdana","sans-serif";
+@import url("http://fonts.googleapis.com/css?family=Geo");
+@import url("http://fonts.googleapis.com/css?family=Reenie+Beanie");
+#header h1 {
+	font: bold 40px Geo;
+	
+	color: white;
+	text-shadow: black 5px 5px 0;
+	float: left;
+}
+
+#header p {
+	font: 20px "Reenie Beanie";
+	
+	color: white;
+	text-shadow: black 5px 5px 0;
+	float: left;
+	clear: left;
+}
+
+body { font-size: 12px;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	background: url(../images/bodybggr.jpg) repeat-x fixed;
+}
+
+/* @group topsearch */
+
+div#nav {
+/*	background: url(../images/slider_top.jpg) repeat-x center center; */
+	border-bottom: 1px solid #979797;
+	height: 40px;
+	display: block;
+	background-position: 0;
+}
+
+#searchlist {
+	margin-left:180px;
+  	height: 70px;
+	background: url(../images/ebook.gif) no-repeat 0 30px;
+	float: none;
+	padding-top: 11px;
+}
+
+#searchlist form {
+	width: 582px;
+	margin-left: 78px;
+	padding-top: 30px;
+	vertical-align: middle;
+}
+
+input#search_for.clear.inactive {
+	color:#666666;	
+}
+
+#search_for {
+	color: black;
+	display: inline;
+	border-style: hidden;
+	padding-left: 10px;
+	font: 21px "Lucida Grande", Lucida, Verdana, sans-serif;
+	width: 410px;
+	background: #d5d5d5 url(../images/ebookbg.gif) no-repeat 0 0;
+	height: 21px;
+}
+#search_for:active {
+	display: inline;
+	border-style: hidden;
+}
+
+
+#searchlist form input.button {
+	border-style: hidden;
+	vertical-align: middle;
+	margin-left: 15px;
+	margin-bottom: 15px;
+	background: url(../images/ebooksearch.gif) no-repeat 0 0px;
+
+}
+#searchlist form input.button:hover {
+	background: url(../images/ebooksearchhover.gif) no-repeat 0 0px;
 	}
+.buttonef {
+	float:left; 
+  	margin:5px 10px;
+	
+}
+
+
+
+/* @end */
 
 html, body { height:100%;}
 
 
 
 
+
+
+/* @group MAP */
 #map {
 	border: 0px solid #979797;
 	min-height: 400px;
@@ -20,30 +109,8 @@ html, body { height:100%;}
 }
 
 
-#searchlist {
-	padding:5px 0px;
-	margin-left: 20px;
-  	height:20px;
-	float:left;
-	font-size:12px;
-	
-	/*width:200px; */
-}
+/* @end */
 
-.inactive{
-	color:#666666;
-}
-.button { 
-	
-	color:#050;
-	font-size:12px;
-}
-
-.buttonef {
-	float:left; 
-  	margin:5px 10px;
-	
-}
 
 .hideme a {
 	color:black;
@@ -59,7 +126,7 @@ h2 h3 h4 {
 
 
 h2 {
-	background:url("yaml/navigation/images/shiny_buttons/background.png") repeat-x scroll right center #C0C0C0;
+	background: url("/images/slider_bottom.jpg") repeat-x right center;
 	display:block;
 	letter-spacing:-1px;
 	font-size:20px;
@@ -102,3 +169,234 @@ h2 {
 	float:left;
 	width:80px;
 }
+
+/* @override 
+	http://localhost:3000/stylesheets/yaml/print/print_draft.css
+	http://localhost:3000/stylesheets/content.css
+*/
+
+/* @group Main */
+
+div#main {
+	border-top: 1px solid #979797;
+}
+
+
+
+
+
+/* @group todo */
+
+a#todo_fixed {
+	text-decoration: line-through;
+	color:gray;
+	width: 100%;
+	float: left;
+	display: block;
+}
+
+a#todo_infix {
+	text-decoration:underline;
+	color:green;
+	width: 100%;
+	float: left;
+	clear: none;
+	display: block;
+}
+
+a#todo_normal {
+	text-decoration: none;
+	width: 100%;
+	float: left;
+}
+
+#todo p {
+	width: 100%;
+}
+div#todo {
+	display: block;
+	width: auto;
+	float: left;
+}
+a#todo_secure {
+	color:red;
+	text-decoration: none;
+}
+
+#todo_bug {
+	color:#005500;
+}
+
+
+
+/* @end */
+
+
+
+/* @group pinshow */
+#pinshow {
+	background-color: #ebe6dc;
+	margin-top: 10px;
+	margin-right: 1%;
+	margin-left: 1%;
+}
+
+#pinshow a {
+	text-decoration: none;
+	float: none;
+	display: block;
+	width: 100%;
+	background-color: #cbd8c3;
+	font-size: 10px;
+	position: relative;
+	clear: none;
+	color: #7686de;
+}
+
+#pinshow div p{
+	color: navy;
+	display: block;
+	text-align: left;
+	margin-left: 100px;
+}
+
+#pinshow div b {
+	color: black;
+	text-transform: uppercase;
+	width: 100px;
+	float: left;
+	display: inline;
+}
+
+
+
+/* @end */
+
+/* @group pinindex */
+
+#indexlist a {
+	text-decoration: none;
+	float: none;
+	display: block;
+	width: 100%;
+	background-color: #cbd8c3;
+	font-size: 10px;
+	position: relative;
+	clear: none;
+	color: #7686de;
+}
+
+div#indexlist {
+	background-color: #ebe6dc;
+	margin-top: 10px;
+	margin-left: 1%;
+	margin-right: 1%;
+	width: 48%;
+	opacity: 0.79;
+}
+
+/* My Comment */
+
+#indexlist div p{
+	color: navy;
+	display: block;
+	text-align: left;
+	margin-left: 100px;
+}
+
+#indexlist div b {
+	color: black;
+	text-transform: uppercase;
+	width: 100px;
+	float: left;
+	display: inline;
+}
+
+
+
+/* @end */
+
+/* @group tabs */
+div#debug{
+	font-size:10px;
+	
+}
+
+
+ul#tab-nav li.current {
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+ul#tab-nav li.current a{
+	background-color: #FFFFFF;
+	color: #000000;
+	padding-top: 4px;
+	position:relative;
+	top:1px;
+	border-bottom: 1px solid #FFFFFF;
+	
+}
+
+ul#tab-nav {
+border-bottom:1px solid #66CC66;
+font:bold 11px verdana,arial,sans-serif;
+list-style-type:none;
+margin:1em 0;
+padding:3px 10px;
+text-align:left;
+}
+
+ul#tab-nav li {
+	display:inline;
+	margin-left:0px;
+}
+
+
+ul#tab-nav li a { /* settings for all tab links */
+padding: 3px 4px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
+border: 1px solid #6c6; /* set border COLOR as desired; usually matches border color specified in #tabnav */
+background-color: #cfc; /* set unselected tab background color as desired */
+color: #666; /* set unselected tab link color as desired */
+margin-right: 0px; /* set additional spacing between tabs as desired */
+text-decoration: none;
+border-bottom: none;
+}
+
+ul#tab-nav a:hover {
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+
+
+div#tab1.tab {
+	color:blue;
+}
+
+
+
+#tab-content  {
+	font-size:10px;
+	
+}
+
+#debug {
+	font-size:10px;
+}
+/* @end */
+/* @end */
+
+
+  #footer_margins {
+	width:100%;
+	position:relative;
+	height:28px;
+	margin-top: -28px;
+	clear:both;
+}
+
+  #footer { padding: 2px; color:#666; background: #f9f9f9; border-top: 5px #efefef solid; 
+	text-align:center;
+	}
+
+  /* (en) navigation: horizontal adjustment | (de) horizontale Ausrichtung  */
+  #nav ul { margin-left: 20px; }
