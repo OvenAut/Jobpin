@@ -133,38 +133,44 @@ function mapstart(){
 		
 		
 		$.each(pindatasrc, function() { 
+				
+					if (this.pindata)
+					var pindatas = this.pindata;
+					else
+					var pindatas = this;
+					
+					var x = pindatas.lat*10000;
+					x = Math.round(x) ;
+					pindatas.lat = x/10000;
+					
+					var y = pindatas.lng*10000;
+					y = Math.round(y) ;
+					pindatas.lng = y/10000;
+					
+			//	alert(pins.latitude + " " + maxlat);
+				if (maxlat < pindatas.lat) {
+				maxlat = pindatas.lat;
+		//		alert(maxlat);
+				};
+				
+				if (minlat > pindatas.lat) {
+				minlat = pindatas.lat;
+				};
+				
+				if (maxlng < pindatas.lng)
+				maxlng = pindatas.lng;
+				
+				if (minlng > pindatas.lng)
+				minlng = pindatas.lng;
+				
+				
+				});
+				
 		
-			if (this.pindata)
-			var pindatas = this.pindata;
-			else
-			var pindatas = this;
-			
-			var x = pindatas.lat*10000;
-			x = Math.round(x) ;
-			pindatas.lat = x/10000;
-			
-			var y = pindatas.lng*10000;
-			y = Math.round(y) ;
-			pindatas.lng = y/10000;
-			
-	//	alert(pins.latitude + " " + maxlat);
-		if (maxlat < pindatas.lat) {
-		maxlat = pindatas.lat;
-//		alert(maxlat);
-		};
-		
-		if (minlat > pindatas.lat) {
-		minlat = pindatas.lat;
-		};
-		
-		if (maxlng < pindatas.lng)
-		maxlng = pindatas.lng;
-		
-		if (minlng > pindatas.lng)
-		minlng = pindatas.lng;
 		
 		
-		});
+		
+		
 	//	alert("maxlat" + maxlat + "MINLAT=" + minlat + "maxlng" + maxlng + "minlng=" + minlng);
 		
 		var midlat = (maxlat + minlat)/2;
@@ -175,7 +181,7 @@ function mapstart(){
 	
 //       	 var southWest = new google.maps.LatLng(minlat-marginRatio, minlng-marginRatio);
 //	      var northEast = new google.maps.LatLng(maxlat+marginRatio, maxlng+marginRatio);
-
+// 
 	if (minlat == maxlat)
 	{
 	var marginRation = 0.002;	
@@ -225,12 +231,13 @@ function mapstart(){
 					      new google.maps.Point(0,0),
 					      // The anchor for this image is the base of the flagpole at 0,32.
 					      new google.maps.Point(7, 23));
+					var imageurl = '/images/pinred_shadow.png';					
 					  var shadow = new google.maps.MarkerImage(imageurl,
 						// The shadow image is larger in the horizontal dimension
 					 	// while the position and offset are the same as for the main image.
-						new google.maps.Size(33, 23),
-						new google.maps.Point(15,0),
-								  					      new google.maps.Point(0, 23));
+						new google.maps.Size(18, 23),
+						new google.maps.Point(0,0),
+						new google.maps.Point(0, 23));
 								  					      // Shapes define the clickable region of the icon.
 								      // The type defines an HTML <area> element 'poly' which
 					      // traces out a polygon as a series of X,Y points. The final
@@ -260,33 +267,33 @@ function mapstart(){
 					// map.bounds.extend(point);
 					// add the marker itself
 					var marker = new google.maps.Marker({
-					    position: point,
-					    map: MAP,
-					    title: name,
-						icon: image,
-						shape: shape,
-						shadow: shadow
-					 });
-					google.maps.event.addListener(marker, 'click', function() {
-						MAP.panTo(point);
-						$.getJSON("/lists/"+ pindatas.id,
-						function(lists) {
-							
-							
-							//alert(lists);
-						content = '<div>Company: ' + lists[0].pindata.company + '</div>';
-						content += '<div>Joblocation: ' + lists[0].pindata.joblocation + '</div>';
-						content += '<div>Education: ' + lists[0].pindata.education + '</div>';
-						content += '<div><a href="/pindatas/'+ lists[0].pindata.id +'" target="_parent">details</a></div>';
-						infowindow.setContent(content);
-						infowindow.open(MAP,marker);
-					
-						});
-					});
-					//infowindow.setContent(name);
-					
+					     position: point,
+					     map: MAP,
+					     title: name,
+					 	icon: image,
+					 	shape: shape,
+					 	shadow: shadow
+					  });
+ 					google.maps.event.addListener(marker, 'click', function() {
+ 						MAP.panTo(point);
+ 						$.getJSON("/lists/"+ pindatas.id,
+ 						function(lists) {
+ 							
+ 							
+ 							//alert(lists);
+ 						content = '<div>Company: ' + lists[0].pindata.company + '</div>';
+ 						content += '<div>Joblocation: ' + lists[0].pindata.joblocation + '</div>';
+ 						content += '<div>Education: ' + lists[0].pindata.education + '</div>';
+ 						content += '<div><a href="/pindatas/'+ lists[0].pindata.id +'" target="_parent">details</a></div>';
+ 						infowindow.setContent(content);
+ 						infowindow.open(MAP,marker);
+ 					
+ 						});
+ 					});
+ 					//infowindow.setContent(name);
+ 					
 		    });
-//	}); // getJSON /lists
+			//}); // getJSON /lists
 	
 //	$.getJSON("/lists/1",function(data){
 	};	
